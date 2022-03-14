@@ -4,19 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "score")
+@Table(name = "pessoa")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Score implements Serializable {
+public class PessoaModel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -24,5 +20,15 @@ public class Score implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer score;
+    private String nome;
+    private String telefone;
+    private Integer idade;
+
+    @ManyToOne
+    @JoinColumn(name = "endereco_id")
+    private EnderecoModel enderecoModel;
+
+    @ManyToOne
+    @JoinColumn(name = "score_id")
+    private ScoreModel scoreModel;
 }

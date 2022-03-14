@@ -12,18 +12,17 @@ import javax.persistence.GenerationType;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "endereco")
+@Table(name = "score")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Endereco implements Serializable {
+public class ScoreModel implements Serializable {
 
-        private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-        private String cidade;
-        private String estado;
+    private Integer score;
 }
