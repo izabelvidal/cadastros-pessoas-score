@@ -23,12 +23,8 @@ public class PessoaModel implements Serializable {
     private String nome;
     private String telefone;
     private Integer idade;
-
-    @ManyToOne
-    @JoinColumn(name = "endereco_id")
-    private EnderecoModel enderecoModel;
-
-    @ManyToOne
-    @JoinColumn(name = "score_id")
-    private ScoreModel scoreModel;
+    private String cidade;
+    private String estado;
+    private Integer score;
+    private String scoreDescricao;
 }
