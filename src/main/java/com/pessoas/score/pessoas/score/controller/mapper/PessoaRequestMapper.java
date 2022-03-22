@@ -7,6 +7,12 @@ public class PessoaRequestMapper {
 
     public static PessoaModel toModel(PessoaModelRequest modelRequest){
         PessoaModel model = new PessoaModel();
+        model.setNome(modelRequest.getNome());
+        model.setTelefone(modelRequest.getTelefone());
+        model.setIdade(modelRequest.getIdade());
+        model.setCidade(modelRequest.getCidade());
+        model.setEstado(modelRequest.getEstado());
+        model.setScore(modelRequest.getScore());
         return model;
     }
 }

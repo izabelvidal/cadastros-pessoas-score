@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/pessoa")
+@RequestMapping(value = "/score")
 public class PessoaController {
 
     @Autowired
     PessoaService service;
 
-    @GetMapping
+    @GetMapping("/pessoa")
     public ResponseEntity<List<PessoaResponseModel>> findAll(){
         List<PessoaModel> obj = service.findAll();
         List<PessoaResponseModel> objRetorno = PessoaResponseMapper.toResponseList(obj);
@@ -33,7 +33,7 @@ public class PessoaController {
         return ResponseEntity.ok().body(modelResponse);
     }
 
-    @PostMapping("/insert")
+    @PostMapping("/pessoa")
     public ResponseEntity<PessoaResponseModel> insert(@RequestBody PessoaModelRequest pessoaModelRequest){
         PessoaModel obj = PessoaRequestMapper.toModel(pessoaModelRequest);
         obj = service.insert(obj);
